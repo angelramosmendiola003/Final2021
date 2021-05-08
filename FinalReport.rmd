@@ -104,7 +104,7 @@ After seeing the Inferential Results, I can see that the P-Value for both the Fi
 $H_0$ The Null Hypothesis shows that there is not a difference in men catching Covid-19 if they get vaccine or not.  
 $H_A$ The Alternative Hypothesis shows that the vaccine does in fact make a difference in men catching Covid-19 if they do get the vaccine or not. So, I reject the Null Hypothesis after seeing the Alternative Hypothesis. 
 
-The odds ratio from the Fisher Exact test is 1.47:1, when taking the odds ratio and computing it into a percentage of the effectiveness  you can do this by using the formula 0/(1+0)*100 you get a 0.5951417% effectiveness.   
+The odds ratio from the Fisher Exact test is 1.47:1, when taking the odds ratio and computing it into a percentage of the effectiveness you can do this by using the formula 0/(1+0)*100 you get a 0.5951417% effectiveness.   
 
 The vaccine is 40% effective for the men, which means that the vaccine is ineffective.
 ```
@@ -129,6 +129,7 @@ basicCC <- ggplot(Females,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+After reviewing the Bar Chart, I can estimate that the percentage of the 607 females that participated in the study who were infected with Covid-19 that got the drug was around 32%, now the percentage of the females who were infected with Covid-19 that got the placebo was around 66%. 
 
 
 ## Numerical Summary 
@@ -139,6 +140,9 @@ colPerc(table2)
 print(table2)
 ```
 
+After reviewing this Numerical Chart, around 607 females that were in the study caught Covid-19 out of the 9,200 women tested. The table shows me that 4.44% of females who took the drug caught Covid-19 and the 8.67% of the women that got injected with the placebo caught Covid-19. The Numerical Summary shows that women are 67% less likely to catch Covid-19 after being injected with the vaccine, this shows that the vaccine is effective. 
+
+
 ## Inferential Results
 ```{r}
 chisq.test(table2)
@@ -146,8 +150,13 @@ chisqtestGC(table2)
 fisher.test(table2)
 ```
 
-The vaccine is 67% effective in females. 
+After seeing the Inferential Results, I can see that the P-Value for the Fisher Exact Test (0.0000000000000002) is relatively small. This can tell me that the results you see on the Inferential Results are accurate and not by any coincidence.   
+$H_0$ The Null Hypothesis shows that there is not a difference in women catching Covid-19 if they get vaccine or not.  
+$H_A$ The Alternative Hypothesis shows that the vaccine does in fact make a difference in women catching Covid-19 if they do get the vaccine or not. So, I reject the Null Hypothesis after seeing the Alternative Hypothesis. 
 
+The odds ratio from the Fisher Exact test is 2.05:1, when taking the odds ratio and computing it into a percentage of the effectiveness you can do this by using the formula 0/(1+0)*100 you get a 67% effectiveness.   
+
+The vaccine is 67% effective in females, which means that the vaccine is effective.
 
 # Drug Users
 
@@ -167,7 +176,7 @@ basicCC <- ggplot(Druggies,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
+After reviewing the Bar Chart, I can estimate that the percentage of the 117 drug users that participated in the study who were infected with Covid-19 that got the drug was around 33%, now the percentage of the drug users who were infected with Covid-19 that got the placebo was around 67%. 
 
 
 ## Numerical Summary 
@@ -178,13 +187,23 @@ colPerc(table3)
 print(table3)
 ```
 
+After reviewing this Numerical Chart, around 117 drug users that were in the study caught Covid-19 out of the 2,280 drug users tested. The table shows me that 33.3% of drug users who took the drug caught Covid-19 and the 66.6% of the drug users that got injected with the placebo caught Covid-19. The Numerical Summary shows that women are 60% less likely to catch Covid-19 after being injected with the vaccine, this shows that the vaccine is effective. 
+
+
 ## Inferential Results
 ```{r}
 chisq.test(table3)
 chisqtestGC(table3)
 fisher.test(table3)
 ```
-The vaccine is 60% effective in the Drug User population. 
+
+After seeing the Inferential Results, I can see that the P-Value for both the Fisher Exact Test (0.003) and the Chi-squared (0.003028) are relatively small. This can tell me that the results you see on the Inferential Results are accurate and not by any coincidence.   
+$H_0$ The Null Hypothesis shows that there is not a difference in drug users catching Covid-19 if they get vaccine or not.  
+$H_A$ The Alternative Hypothesis shows that the vaccine does in fact make a difference in drug users catching Covid-19 if they do get the vaccine or not. So, I reject the Null Hypothesis after seeing the Alternative Hypothesis. 
+
+The odds ratio from the Fisher Exact test is 1:83:1, when taking the odds ratio and computing it into a percentage of the effectiveness you can do this by using the formula 0/(1+0)*100 you get a 60% effectiveness.   
+
+The vaccine is 60% effective in the Drug User population, which means that the vaccine is effective.
 
 # LGBTQ
 
@@ -204,6 +223,9 @@ basicCC <- ggplot(LGBTQ,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+After reviewing the Bar Chart, I can estimate that the percentage of the 116 LGBTQ people that participated in the study who were infected with Covid-19 that got the drug was around 71%, now the percentage of the LGBTQ people who were infected with Covid-19 that got the placebo was around 28%. 
+
+
 ## Numerical Summary 
 ```{r}
 table4 <- xtabs(~infected + treatment, data=LGBTQdata)
@@ -211,6 +233,8 @@ rowPerc(table4)
 colPerc(table4)
 print(table4)
 ```
+After reviewing this Numerical Chart, around 116 LGBTQ that were in the study caught Covid-19 out of the 2,040 LGBTQ tested. The table shows me that 70% of LGBTQ who took the drug caught Covid-19 and the 29% of the LGBTQ population in the study that got injected with the placebo caught Covid-19. The Numerical Summary shows that the LGBTQ population in the study are 29% more likely to catch Covid-19 after being injected with the vaccine, this shows that the vaccine is not effective. 
+
 
 ## Inferential Results
 ```{r}
@@ -219,9 +243,17 @@ chisqtestGC(table4)
 fisher.test(table4)
 ```
 
+After seeing the Inferential Results, I can see that the P-Value for the Fisher Exact Test (0.0000057) is relatively small. This can tell me that the results you see on the Inferential Results are accurate and not by any coincidence.   
+$H_0$ The Null Hypothesis shows that there is not a difference in LGBTQ catching Covid-19 if they get vaccine or not.  
+$H_A$ The Alternative Hypothesis shows that the vaccine does in fact make a difference in LGBTQ catching Covid-19 if they do get the vaccine or not. So, I reject the Null Hypothesis after seeing the Alternative Hypothesis. 
+
+The odds ratio from the Fisher Exact test is 0.40:1, when taking the odds ratio and computing it into a percentage of the effectiveness you can do this by using the formula 0/(1+0)*100 you get a 29% effectiveness.   
+
 The vaccine is not effective in the LGBTQ community, seeing the fact that it is only 29% effective.
 
 # Discussion and Conclusion 
 
-After looking at the 4 different groups in the study
+After looking at the 4 different groups in the study I saw different results in which the Males and the LBGTQ population were the highest likely to catch covid-19 even after receiving the shot. While the Women and the Drug Users were least likely to catch covid-19 after receiving the shot. The vaccine is 67% effective in females, which means that the vaccine is effective, The vaccine is 60% effective in the Drug User population, which means that the vaccine is effective. The vaccine is 40% effective for the men, which means that the vaccine is ineffective, The vaccine is not effective in the LGBTQ community, seeing the fact that it is only 29% effective.
+
+
 
